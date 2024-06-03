@@ -2,7 +2,7 @@
 	<div class="main-menu-header">
 		<nav class="main-menu">
 			<div>
-				<img src="/public/img/andrewLogo.png" alt="" />
+				<img src="/img/andrewLogo.png" alt="" />
 			</div>
 			<ul>
 				<li><a href="#">Me</a></li>
@@ -15,7 +15,10 @@
 		<input type="checkbox" id="hamburger-input" class="burger-shower" />
 		<label id="hamburger-menu" for="hamburger-input">
 			<nav id="sidebar-menu">
-				<h3>Menu</h3>
+				<div class="ex">
+					<div/>
+					<div/>
+				</div>
 				<ul>
 					<li><a href="#">Me</a></li>
 					<li><a href="#">Projects</a></li>
@@ -33,7 +36,7 @@
 		position: fixed;
 		width: 100%;
 		top: 0;
-		background: #171717;
+		background: white;
 		margin: 0px;
 		padding: 0px;
 		z-index: 2;
@@ -44,7 +47,7 @@
 		height: 100px;
 		width: 100%;
 		top: 0;
-		background: #171717;
+		background: white;
 		margin: 0px;
 		padding: 0px;
 		z-index: 2;
@@ -82,8 +85,14 @@
 		background-color: rgb(88, 90, 90);
 	}
 
-	.main-menu a {
+	.main-menu li:hover a {
 		color: #b9faf8;
+		font-size: 1.5rem;
+		text-decoration: none;
+	}
+
+	.main-menu a {
+		color: black;
 		font-size: 1.5rem;
 		text-decoration: none;
 	}
@@ -94,6 +103,24 @@
 		display: none;
 		background-color: antiquewhite;
 		width: 100%;
+	}
+
+	.ex {
+		margin-top: 2em;
+	}
+
+	.ex > div {
+		background: white;
+		height: 2px;
+		width: 40px;
+		margin: -1px 0;
+	}
+
+	.ex div:first-child{
+		transform: rotate(45deg);
+	}
+	.ex div:last-child{
+		transform: rotate(-45deg);
 	}
 
 	#hamburger-input {
@@ -153,6 +180,7 @@
 	#hamburger-menu li {
 		list-style-type: none;
 		line-height: 3rem;
+		opacity: 1;
 	}
 
 	#hamburger-menu a {
@@ -165,13 +193,13 @@
 		text-decoration: underline;
 	}
 
-	#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+	#hamburger-input:checked + #hamburger-menu #sidebar-menu{
 		visibility: visible;
 		left: 0;
 	}
 	#hamburger-input:checked ~ .overlay {
 		visibility: visible;
-		opacity: 0.4;
+		opacity: 0.9;
 	}
 
 	@media screen and (max-width: 750px) {
