@@ -2,23 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Menu from '../components/Menu.astro';
+import Presentation from '../components/Presentation.astro';
 ---
 
 <Layout title="Andres portfolio.">
 	<Menu/>
 	<main>
-		
+		<Presentation/>
 	</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: black;
+		margin-top:100px;
+		width: 100%;
 		font-size: 20px;
-		line-height: 1.6;
 	}
 </style>
