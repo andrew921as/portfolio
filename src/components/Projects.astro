@@ -1,0 +1,69 @@
+---
+import Card from "./Card.astro";
+
+import HTML from "./icons/HTML.astro";
+import CSS from "./icons/CSS.astro";
+import React from "./icons/React.astro";
+import Next from "./icons/Next.astro";
+import Node from "./icons/Node.astro";
+import Express from "./icons/Express.astro";
+import Mongo from "./icons/Mongo.astro";
+import Threejs from "./icons/Threejs.astro";
+---
+
+<section id="projects">
+  <h1>My Projects</h1>
+  <div class="projectsGalery">
+    <Card
+      title="Proyecto Olimpo"
+      href="https://github.com/andrew921as/ProyectoO"
+      description="En este proyecto se realizo una pagina web con el objetivo de poder enseñar un poco mas la cultura griega con elementos de gamificacion para que las personas, especialmente los jovenes se interesaran y pudieran aprender un poco mas de esta cultura"
+      image="/img/OlimpoP.png"
+      tech={["React", "Node", "MongoDB", "Express"]}
+    >
+      <HTML />
+      <CSS />
+      <React />
+      <Next />
+			<Express/>
+			<Mongo/>
+			<Threejs/>
+    </Card>
+
+    <Card
+      title="Project 1"
+      href="https://github.com/andrew921as/ProyectoO"
+      description="Hola"
+    />
+
+    <Card
+      title="Project 1"
+      href="https://github.com/andrew921as/ProyectoO"
+      description="Hola"
+    />
+
+    <Card
+      title="Project 1"
+      href="https://github.com/andrew921as/ProyectoO"
+      description="Hola"
+    />
+  </div>
+</section>
+
+<style>
+  #projects {
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: center;
+    margin-top: 80vh;
+    width: 80%;
+    margin-inline: auto;
+    color: var(--accent-gray);
+  }
+  .projectsGalery {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 50px;
+  }
+</style>
