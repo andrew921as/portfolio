@@ -6,20 +6,21 @@ import CSS from "./icons/CSS.astro";
 import React from "./icons/React.astro";
 import Next from "./icons/Next.astro";
 import Node from "./icons/Node.astro";
+import Sass from "./icons/Sass.astro";
+import JS from "./icons/JS.astro";
 import Express from "./icons/Express.astro";
 import Mongo from "./icons/Mongo.astro";
 import Threejs from "./icons/Threejs.astro";
 ---
 
 <section id="projects">
-  <h1>My Projects</h1>
+  <h2>My Projects</h2>
   <div class="projectsGalery">
     <Card
       title="Proyecto Olimpo"
       href="https://github.com/andrew921as/ProyectoO"
-      description="En este proyecto se realizo una pagina web con el objetivo de poder enseñar un poco mas la cultura griega con elementos de gamificacion para que las personas, especialmente los jovenes se interesaran y pudieran aprender un poco mas de esta cultura"
+      description="In this project, a website was created with the objective of teaching more about Greek culture. It incorporates elements of gamification to engage people, especially young individuals, and encourage them to learn more about this rich cultural heritage"
       image="/img/OlimpoP.png"
-      tech={["React", "Node", "MongoDB", "Express"]}
     >
       <HTML />
       <CSS />
@@ -31,22 +32,38 @@ import Threejs from "./icons/Threejs.astro";
     </Card>
 
     <Card
-      title="Project 1"
-      href="https://github.com/andrew921as/ProyectoO"
-      description="Hola"
-    />
+      title="Projecto Pacman"
+      href="https://github.com/andrew921as/Mr.pacman"
+      description="This is a project that has the pourpose to implement functional programing paradigm in order to create a pacman game, it was used with a learning objective"
+			image="/img/ProyectoPacman.png"
+		>
+      <HTML />
+      <CSS />
+			<JS/>
+		</Card>
 
     <Card
-      title="Project 1"
-      href="https://github.com/andrew921as/ProyectoO"
-      description="Hola"
-    />
+      title="Karen's pizza"
+      href="https://www.karenspizza.com"
+      description="The current karenspizza webpage using React avoiding to use a CMS in order to reduce deploiment costs and dependencies fails"
+			image="/img/KarensPizza.png"
+    >
+			<HTML />
+			<Sass />
+			<React />
+
+		</Card>
 
     <Card
-      title="Project 1"
-      href="https://github.com/andrew921as/ProyectoO"
-      description="Hola"
-    />
+      title="AcquaSanta Hotel"
+      href="https://www.acquasantahotel.com"
+      description="The current webpage of the Acquasanta hotel in Cali using Html and JS avoiding to use a CMS in order to reduce deploiment costs and dependencies fails"
+			image="/img/AcquaSanta.png"
+		>
+			<HTML />
+			<CSS/>
+			<JS />
+		</Card>
   </div>
 </section>
 
