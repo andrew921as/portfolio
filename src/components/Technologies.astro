@@ -46,7 +46,7 @@ import Postgres from "./icons/Postgres.astro";
 #technologies {
   background-color: var(--accent-gray);
   margin-top: 2em;
-  padding: 30px 0;
+  padding: 1em 0 5em 0;
   text-align: center;
   color: white;
 }
@@ -57,13 +57,21 @@ import Postgres from "./icons/Postgres.astro";
   grid-template-columns: repeat(auto-fill, minmax(100px, 2fr));
   grid-gap: 50px;
   justify-content: center;
+  align-items: center;
 }
 
 .techList > * {
   transition: transform 0.3s ease-in-out; /* Smooth transition */
+  margin: 0 auto;
 }
 
 .techList > *:hover {
   transform: scale(1.5); /* Scale the element 1.5 times on hover */
+}
+
+@media (max-width: 768px) {
+  .techList {
+    width: 100%;
+  }
 }
 </style>

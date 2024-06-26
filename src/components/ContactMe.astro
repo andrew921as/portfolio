@@ -1,0 +1,150 @@
+---
+import HTML from './icons/HTML.astro';
+---
+
+<section id="contactme">
+  <h2>Get in touch</h2>
+  <div class="container">
+    <div class="information">
+      <img src="/img/myself.png" alt="my_Image" class="myImage"/>
+      <p>
+      Lets build somethin together. If you have any questions or just want to say hi, feel free to drop me a message. I will get back to you as soon as possible.
+      </p>
+      <div class="contactLinks">
+        <HTML/>
+        <HTML/>
+        <HTML/>
+        <HTML/>
+      </div>  
+    </div>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name"> Name </label>
+        <input type="text" id="name" name="name" required />
+        <span class="error-message">The text field is required.</span>
+      </div>
+      <div class="form-group">
+        <label for="email">
+          <span class="icon">✉️</span>
+          E-mail
+        </label>
+        <input type="email" id="email" name="email" required />
+        <span class="error-message">The text field is required.</span>
+      </div>
+      <div class="form-group">
+        <label for="phone">
+          <span class="icon">📞</span>
+          Phone
+        </label>
+        <input type="text" id="phone" name="phone" required />
+        <span class="error-message">Only numbers are required.</span>
+      </div>
+      <div class="form-group">
+        <label for="message">
+          <span class="icon">💬</span>
+          Message
+        </label>
+        <textarea id="message" name="message" required></textarea>
+        <span class="error-message">The text field is required.</span>
+      </div>
+      <button type="submit">SEND</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  #contactme {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+  }
+
+  #contactme h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4em;
+  }
+  .information{
+    width: 40%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .myImage{
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+  }
+  .contactLinks{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 1em;
+  }
+  .form-group {
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #b8b5b5;
+    background: none;
+    color: var(--accent-gray);
+    font-size: 16px;
+  }
+
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+  input:focus,
+  textarea:focus {
+    border-bottom-color: #969595;
+    outline: none;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+    display: none;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
