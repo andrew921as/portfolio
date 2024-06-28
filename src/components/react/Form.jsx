@@ -3,8 +3,11 @@ import { useFormik } from "formik";
 import emailjs from "@emailjs/browser";
 
 export default function Form() {
+  const emailKey = import.meta.env.PUBLIC_EMAIL_KEY;
+  const emailServiceId = import.meta.env.PUBLIC_SERVICE_ID;
+  const emailTemplateId = import.meta.env.PUBLIC_TEMPLATE_ID;
   emailjs.init({
-    publicKey: 'REACT_APP_EMAIL_KEY',
+    publicKey: emailKey,
     // Do not allow headless browsers
     blockHeadless: true,
     blockList: {
@@ -28,11 +31,11 @@ export default function Form() {
       phone: "",
       message: "",
     },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      emailjs.send('REACT_APP_SERVICE_ID', 'REACT_APP_TEMPLATE_ID', values).then(
+    onSubmit: (values,{resetForm}) => {
+      emailjs.send(emailServiceId, emailTemplateId, values).then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
+          alert('SUCCESS!', response.status, response.text);
+          resetForm();
         },
         (error) => {
           console.log('FAILED...', error);

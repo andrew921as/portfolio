@@ -20,7 +20,7 @@ import Form from './react/Form';
         <Gmail/>
       </div>  
     </div>
-    <Form client:visible/>
+    <Form client:load/>
   </div>
 </section>
 
@@ -119,5 +119,20 @@ import Form from './react/Form';
 
   button:hover {
     background-color: #0056b3;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .information{
+      width: 80%;
+    }
+    .myImage{
+      width: 80%;
+    }
+    .contactLinks{
+      width: 80%;
+    }
   }
 </style>
