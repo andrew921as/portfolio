@@ -1,0 +1,57 @@
+.formGroup {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #b8b5b5;
+  background: none;
+  color: var(--accent-gray);
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+input:focus,
+textarea:focus {
+  border-bottom-color: #969595;
+  outline: none;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  display: none;
+}
+
+button {
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

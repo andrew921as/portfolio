@@ -1,5 +1,9 @@
 ---
 import HTML from './icons/HTML.astro';
+import Git from './icons/Git.astro';
+import LinKedin from './icons/LinKedin.astro';
+import Gmail from './icons/Gmail.astro';
+import Form from './react/Form';
 ---
 
 <section id="contactme">
@@ -11,44 +15,12 @@ import HTML from './icons/HTML.astro';
       Lets build somethin together. If you have any questions or just want to say hi, feel free to drop me a message. I will get back to you as soon as possible.
       </p>
       <div class="contactLinks">
-        <HTML/>
-        <HTML/>
-        <HTML/>
-        <HTML/>
+        <Git/>
+        <LinKedin/>
+        <Gmail/>
       </div>  
     </div>
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="name"> Name </label>
-        <input type="text" id="name" name="name" required />
-        <span class="error-message">The text field is required.</span>
-      </div>
-      <div class="form-group">
-        <label for="email">
-          <span class="icon">✉️</span>
-          E-mail
-        </label>
-        <input type="email" id="email" name="email" required />
-        <span class="error-message">The text field is required.</span>
-      </div>
-      <div class="form-group">
-        <label for="phone">
-          <span class="icon">📞</span>
-          Phone
-        </label>
-        <input type="text" id="phone" name="phone" required />
-        <span class="error-message">Only numbers are required.</span>
-      </div>
-      <div class="form-group">
-        <label for="message">
-          <span class="icon">💬</span>
-          Message
-        </label>
-        <textarea id="message" name="message" required></textarea>
-        <span class="error-message">The text field is required.</span>
-      </div>
-      <button type="submit">SEND</button>
-    </form>
+    <Form client:visible/>
   </div>
 </section>
 
@@ -138,6 +110,7 @@ import HTML from './icons/HTML.astro';
 
   button {
     background-color: #007bff;
+    padding: 10px 20px;
     color: #fff;
     border: none;
     border-radius: 4px;
