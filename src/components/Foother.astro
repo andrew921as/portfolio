@@ -1,0 +1,91 @@
+---
+import GitWhite from "./icons/GitWhite.astro";
+import GmailWhite from "./icons/GmailWhite.astro";
+import LinKedinWhite from "./icons/LinKedinWhite.astro";
+---
+
+<footer>
+  <div class="connect">
+    <p>© 2024 Andres Felipe develop</p>
+    <div class="contactLinks">
+      <a href="https://github.com/andrew921as" target="_blank"><GitWhite /></a>
+      <a
+        href="https://www.linkedin.com/in/andres-felipe-velasco-coronado-634543288/"
+        target="_blank"
+      >
+        <LinKedinWhite />
+      </a>
+      <a href="mailto:andresfelipecoronado@gmail.com" target="_blank">
+        <GmailWhite />
+      </a>
+    </div>
+  </div>
+  <nav class="sections">
+    <ul>
+      <li><a href="#about">Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#contactme">Contact</a></li>
+    </ul>
+  </nav>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--accent-gray);
+    padding: 50px 0;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactLinks {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+  .sections {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--accent-blue);
+  }
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: center; /* Center align footer content on mobile */
+    }
+    .sections {
+      margin-top: 2em;
+      width: 100%; /* Ensure the sections take full width */
+    }
+    ul {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      width: 100%; /* Ensure the ul takes full width */
+    }
+    li {
+      width: 50%; /* Make each li take full width */
+      text-align: center;
+    }
+  }
+</style>
