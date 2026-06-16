@@ -1,7 +1,6 @@
 ---
-import Particles from "astro-particles";
-import type { ISourceOptions } from "tsparticles-engine";
-import type { RecursivePartial } from "tsparticles-engine";
+import Particles from "@tsparticles/astro";
+import type { ISourceOptions, RecursivePartial } from "@tsparticles/engine";
 import GitWhite from "./icons/GitWhite.astro";
 import LinKedinWhite from "./icons/LinKedinWhite.astro";
 import GmailWhite from "./icons/GmailWhite.astro";
@@ -266,7 +265,6 @@ const options: ISourceOptions = {
     },
     effect: {
       close: true,
-      fill: true,
       options: {},
       type: [],
     },
@@ -275,14 +273,6 @@ const options: ISourceOptions = {
       angle: {
         offset: 0,
         value: 90,
-      },
-      attract: {
-        distance: 200,
-        enable: false,
-        rotate: {
-          x: 3000,
-          y: 3000,
-        },
       },
       center: {
         x: 50,
@@ -324,11 +314,6 @@ const options: ISourceOptions = {
         enable: false,
       },
       straight: false,
-      trail: {
-        enable: false,
-        length: 10,
-        fill: {},
-      },
       vibrate: false,
       warp: false,
     },
@@ -371,7 +356,6 @@ const options: ISourceOptions = {
     },
     shape: {
       close: true,
-      fill: true,
       options: {},
       type: "circle",
     },
@@ -553,26 +537,12 @@ const options: ISourceOptions = {
 ---
 
 <script>
-  import { type Container, type Engine, tsParticles } from "tsparticles-engine";
-  import { loadFull } from "tsparticles";
-
-  // the function name is the parameter passed to the init attribute
-  // required
-  // add the function to window is mandatory, it will be searched there
-  window.particlesInit = async function (engine: Engine) {
-    await loadFull(engine);
-  };
-
-  // the function name is the parameter passed to the loaded attribute
-  // optional
-  // add the function to window is mandatory, it will be searched there
-  window.particlesLoaded = function (container: Container) {
-    console.log("particlesLoaded callback");
-  };
+  import initParticles from "../utils/scripts/particles-init.ts";
+  initParticles();
 </script>
 
 <section id="about">
-  <Particles id="tsparticles" options={options} init="particlesInit" />
+  <Particles id="tsparticles" options={options}/>
   <div class="intro">
     <h1><span>Andrés</span> Felipe</h1>
     <p class="animationLine">
@@ -580,8 +550,8 @@ const options: ISourceOptions = {
     </p>
     <p>Full-stack developer of the <span>Future</span></p>
     <p class="description">
-      Colombia based developer with +2 years of experience in the web
-      development field and +1 year of experience working on inplace solutions
+      Colombia based developer with +5 years of experience in the web
+      development field and +2 years of experience working on inplace solutions
     </p>
     <div class="contact">
       <a href="https://github.com/andrew921as" target="_blank"><GitWhite /></a>

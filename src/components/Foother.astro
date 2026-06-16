@@ -2,11 +2,13 @@
 import GitWhite from "./icons/GitWhite.astro";
 import GmailWhite from "./icons/GmailWhite.astro";
 import LinKedinWhite from "./icons/LinKedinWhite.astro";
+
+let currentYear = new Date().getFullYear();
 ---
 
 <footer>
   <div class="connect">
-    <p>© 2024 Andres Felipe develop</p>
+    <p>© {currentYear} Andres Felipe develop</p>
     <div class="contactLinks">
       <a href="https://github.com/andrew921as" target="_blank"><GitWhite /></a>
       <a
