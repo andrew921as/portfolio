@@ -1,22 +1,23 @@
 ---
-import Card from "./Card.astro";
+import ProjectCard from "../molecules/ProjectCard.astro";
+import SectionTitle from "../atoms/SectionTitle.astro";
 
-import HTML from "./icons/HTML.astro";
-import CSS from "./icons/CSS.astro";
-import React from "./icons/React.astro";
-import Next from "./icons/Next.astro";
-import Node from "./icons/Node.astro";
-import Sass from "./icons/Sass.astro";
-import JS from "./icons/JS.astro";
-import Express from "./icons/Express.astro";
-import Mongo from "./icons/Mongo.astro";
-import Threejs from "./icons/Threejs.astro";
+import HTML from "../atoms/icons/HTML.astro";
+import CSS from "../atoms/icons/CSS.astro";
+import React from "../atoms/icons/React.astro";
+import Next from "../atoms/icons/Next.astro";
+import Node from "../atoms/icons/Node.astro";
+import Sass from "../atoms/icons/Sass.astro";
+import JS from "../atoms/icons/JS.astro";
+import Express from "../atoms/icons/Express.astro";
+import Mongo from "../atoms/icons/Mongo.astro";
+import Threejs from "../atoms/icons/Threejs.astro";
 ---
 
 <section id="projects">
-  <h2>My Projects</h2>
+  <SectionTitle>My Projects</SectionTitle>
   <div class="projectsGalery">
-    <Card
+    <ProjectCard
       title="Karen's pizza"
       href="https://www.karenspizza.com"
       description="The current karenspizza webpage using React avoiding to use a CMS in order to reduce deploiment costs and dependencies fails"
@@ -26,9 +27,9 @@ import Threejs from "./icons/Threejs.astro";
 			<Sass />
 			<React />
 
-		</Card>
+		</ProjectCard>
 
-    <Card
+    <ProjectCard
       title="AcquaSanta Hotel"
       href="https://www.acquasantahotel.com"
       description="The current webpage of the Acquasanta hotel in Cali using Html and JS avoiding to use a CMS in order to reduce deploiment costs and dependencies fails"
@@ -37,9 +38,9 @@ import Threejs from "./icons/Threejs.astro";
 			<HTML />
 			<CSS/>
 			<JS />
-		</Card>
+		</ProjectCard>
 
-        <Card
+        <ProjectCard
       title="Proyecto Olimpo"
       href="https://github.com/andrew921as/ProyectoO"
       description="In this project, a website was created with the objective of teaching more about Greek culture. It incorporates elements of gamification to engage people, especially young individuals, and encourage them to learn more about this rich cultural heritage"
@@ -52,9 +53,9 @@ import Threejs from "./icons/Threejs.astro";
 			<Express/>
 			<Mongo/>
 			<Threejs/>
-    </Card>
+    </ProjectCard>
 
-    <Card
+    <ProjectCard
       title="Projecto Pacman"
       href="https://github.com/andrew921as/Mr.pacman"
       description="This is a project that has the pourpose to implement functional programing paradigm in order to create a pacman game, it was used with a learning objective"
@@ -63,7 +64,7 @@ import Threejs from "./icons/Threejs.astro";
       <HTML />
       <CSS />
 			<JS/>
-		</Card>
+		</ProjectCard>
   </div>
 </section>
 

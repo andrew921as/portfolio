@@ -1,0 +1,120 @@
+---
+import NavLink from "../atoms/NavLink.astro";
+import { navItems } from "../../utils/constants/navItems.js";
+
+interface Props {
+  variant?: "desktop" | "sidebar" | "footer";
+}
+
+const { variant = "desktop" } = Astro.props;
+---
+
+<ul class={variant}>
+  {
+    navItems.map((item) => (
+      <li>
+        <NavLink href={item.href} label={item.label} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  /* desktop (Header, wide viewport) */
+  .desktop {
+    width: 100%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .desktop li {
+    list-style-type: none;
+    display: flex;
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    background-color: white;
+  }
+
+  .desktop li:hover {
+    cursor: pointer;
+    background-color: #262626;
+  }
+
+  .desktop li:hover a {
+    color: #0083c3;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .desktop a {
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* sidebar (Header, hamburger menu) */
+  .sidebar {
+    padding-left: 0px;
+  }
+
+  .sidebar li {
+    list-style-type: none;
+    line-height: 3rem;
+    opacity: 1;
+  }
+
+  .sidebar a {
+    color: #b9faf8;
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  /* footer */
+  .footer {
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+  }
+
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: var(--accent-blue);
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+    .footer li {
+      width: 50%;
+      text-align: center;
+    }
+  }
+</style>

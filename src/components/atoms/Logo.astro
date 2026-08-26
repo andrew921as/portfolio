@@ -1,0 +1,19 @@
+---
+interface Props {
+  src?: string;
+  alt?: string;
+}
+
+const { src = "/img/andrewLogo.png", alt = "" } = Astro.props;
+---
+
+<img src={src} alt={alt} class="logo" />
+
+<style>
+  .logo {
+    padding-right: 4em;
+    height: 5rem;
+    left: 0;
+    background: #fff;
+  }
+</style>

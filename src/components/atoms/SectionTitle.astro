@@ -1,0 +1,15 @@
+---
+interface Props {
+  marginBottom?: string;
+}
+
+const { marginBottom } = Astro.props;
+---
+
+<h2 style={marginBottom ? `margin-bottom: ${marginBottom}` : undefined}><slot /></h2>
+
+<style>
+  h2 {
+    text-align: center;
+  }
+</style>

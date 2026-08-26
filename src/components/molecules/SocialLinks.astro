@@ -1,0 +1,33 @@
+---
+import Git from "../atoms/icons/Git.astro";
+import LinKedin from "../atoms/icons/LinKedin.astro";
+import Gmail from "../atoms/icons/Gmail.astro";
+import GitWhite from "../atoms/icons/GitWhite.astro";
+import LinKedinWhite from "../atoms/icons/LinKedinWhite.astro";
+import GmailWhite from "../atoms/icons/GmailWhite.astro";
+import SocialLink from "./SocialLink.astro";
+
+interface Props {
+  variant?: "light" | "dark";
+}
+
+const { variant = "light" } = Astro.props;
+const isDark = variant === "dark";
+
+const GitIcon = isDark ? GitWhite : Git;
+const LinKedinIcon = isDark ? LinKedinWhite : LinKedin;
+const GmailIcon = isDark ? GmailWhite : Gmail;
+---
+
+<SocialLink href="https://github.com/andrew921as" variant={variant}>
+  <GitIcon />
+</SocialLink>
+<SocialLink
+  href="https://www.linkedin.com/in/andres-felipe-velasco-coronado-634543288/"
+  variant={variant}
+>
+  <LinKedinIcon />
+</SocialLink>
+<SocialLink href="mailto:andresfelipecoronado@gmail.com" variant={variant}>
+  <GmailIcon />
+</SocialLink>

@@ -1,0 +1,75 @@
+---
+import SectionTitle from "../atoms/SectionTitle.astro";
+import SocialLinks from "../molecules/SocialLinks.astro";
+import ContactForm from "./react/ContactForm.jsx";
+---
+
+<section id="contactme">
+  <SectionTitle marginBottom="50px">Get in touch</SectionTitle>
+  <div class="container">
+    <div class="information">
+      <img src="/img/myself.png" alt="my_Image" class="myImage" />
+      <p>
+        Lets build somethin together. If you have any questions or just want to
+        say hi, feel free to drop me a message. I will get back to you as soon
+        as possible.
+      </p>
+      <div class="contactLinks">
+        <SocialLinks variant="light" />
+      </div>
+    </div>
+    <ContactForm client:load />
+  </div>
+</section>
+
+<style>
+  #contactme {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+  }
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4em;
+  }
+  .information {
+    width: 40%;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .myImage {
+    width: 50%;
+    border-radius: 10px;
+    position: relative;
+  }
+  .contactLinks {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin-top: 1em;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    .information {
+      width: 80%;
+    }
+    .myImage {
+      width: 80%;
+    }
+    .contactLinks {
+      width: 80%;
+    }
+  }
+</style>

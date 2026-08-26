@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  variant?: "light" | "dark";
+}
+
+const { href, variant = "light" } = Astro.props;
+---
+
+<a href={href} target="_blank" class={variant}><slot /></a>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+  a.dark {
+    color: white;
+    transition: 0.3s;
+  }
+  a.dark:hover {
+    transform: scale(1.2);
+  }
+</style>

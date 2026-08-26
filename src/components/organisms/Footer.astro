@@ -1,0 +1,54 @@
+---
+import SocialLinks from "../molecules/SocialLinks.astro";
+import NavList from "../molecules/NavList.astro";
+
+let currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="connect">
+    <p>© {currentYear} Andres Felipe develop</p>
+    <div class="contactLinks">
+      <SocialLinks variant="dark" />
+    </div>
+  </div>
+  <nav class="sections">
+    <NavList variant="footer" />
+  </nav>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--accent-gray);
+    padding: 50px 0;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .connect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactLinks {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+  .sections {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  @media (max-width: 768px) {
+    footer {
+      flex-direction: column;
+      align-items: center;
+    }
+    .sections {
+      margin-top: 2em;
+      width: 100%;
+    }
+  }
+</style>
