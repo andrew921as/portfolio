@@ -13,7 +13,7 @@ const { variant = "desktop" } = Astro.props;
   {
     navItems.map((item) => (
       <li>
-        <NavLink href={item.href} label={item.label} />
+        <NavLink href={item.href} label={item.label} variant={variant} />
       </li>
     ))
   }
@@ -49,23 +49,6 @@ const { variant = "desktop" } = Astro.props;
     background-color: #262626;
   }
 
-  .desktop li:hover a {
-    color: #0083c3;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-
-  .desktop a {
-    color: black;
-    font-size: 1.5rem;
-    text-decoration: none;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   /* sidebar (Header, hamburger menu) */
   .sidebar {
     padding-left: 0px;
@@ -77,30 +60,11 @@ const { variant = "desktop" } = Astro.props;
     opacity: 1;
   }
 
-  .sidebar a {
-    color: #b9faf8;
-    font-size: 1.3rem;
-    text-decoration: none;
-  }
-
-  .sidebar a:hover {
-    text-decoration: underline;
-  }
-
   /* footer */
   .footer {
     list-style-type: none;
     display: flex;
     gap: 2em;
-  }
-
-  .footer a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    color: var(--accent-blue);
   }
 
   @media (max-width: 768px) {

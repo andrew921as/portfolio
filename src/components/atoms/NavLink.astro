@@ -2,9 +2,49 @@
 interface Props {
   href: string;
   label: string;
+  variant?: "desktop" | "sidebar" | "footer";
 }
 
-const { href, label } = Astro.props;
+const { href, label, variant = "desktop" } = Astro.props;
 ---
 
-<a href={href}>{label}</a>
+<a href={href} class={variant}>{label}</a>
+
+<style>
+  /* desktop (Header, wide viewport) */
+  a.desktop {
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.desktop:hover {
+    color: #0083c3;
+  }
+
+  /* sidebar (Header, hamburger menu) */
+  a.sidebar {
+    color: #b9faf8;
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+
+  a.sidebar:hover {
+    text-decoration: underline;
+  }
+
+  /* footer */
+  a.footer {
+    color: white;
+    text-decoration: none;
+  }
+
+  a.footer:hover {
+    color: var(--accent-blue);
+  }
+</style>
