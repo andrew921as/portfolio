@@ -1,0 +1,19 @@
+.formGroup {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  display: none;
+}

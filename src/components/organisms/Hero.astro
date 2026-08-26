@@ -1,9 +1,7 @@
 ---
 import Particles from "@tsparticles/astro";
 import type { ISourceOptions, RecursivePartial } from "@tsparticles/engine";
-import GitWhite from "./icons/GitWhite.astro";
-import LinKedinWhite from "./icons/LinKedinWhite.astro";
-import GmailWhite from "./icons/GmailWhite.astro";
+import SocialLinks from "../molecules/SocialLinks.astro";
 
 // Define your style object
 const canvasStyles: RecursivePartial<CSSStyleDeclaration> = {
@@ -537,7 +535,7 @@ const options: ISourceOptions = {
 ---
 
 <script>
-  import initParticles from "../utils/scripts/particles-init.ts";
+  import initParticles from "../../utils/scripts/particles-init.ts";
   initParticles();
 </script>
 
@@ -554,16 +552,7 @@ const options: ISourceOptions = {
       development field and +2 years of experience working on inplace solutions
     </p>
     <div class="contact">
-      <a href="https://github.com/andrew921as" target="_blank"><GitWhite /></a>
-      <a
-        href="https://www.linkedin.com/in/andres-felipe-velasco-coronado-634543288/"
-        target="_blank"
-      >
-        <LinKedinWhite />
-      </a>
-      <a href="mailto:andresfelipecoronado@gmail.com" target="_blank">
-        <GmailWhite />
-      </a>
+      <SocialLinks variant="dark" />
     </div>
   </div>
 </section>
@@ -607,14 +596,6 @@ const options: ISourceOptions = {
     display: flex;
     justify-content: space-around;
     gap: 1em;
-  }
-  .contact a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  .contact a:hover {
-    transform: scale(1.2);
   }
   .animationLine {
     display: flex;
