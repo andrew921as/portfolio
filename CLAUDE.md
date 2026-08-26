@@ -14,8 +14,22 @@ Package manager is pnpm (`packageManager: pnpm@11.5.2` in package.json; both `pn
 - `pnpm build` — production build (outputs to `dist/`, runs type checks as part of `astro check`/build)
 - `pnpm preview` — preview the production build locally
 - `pnpm astro ...` — run arbitrary Astro CLI commands (e.g. `pnpm astro check`)
+- `pnpm test` — run the Vitest unit test suite once (`vitest run`)
+- `pnpm test:watch` — run Vitest in watch mode
 
-There is no test suite and no lint script configured in this repo.
+There is no lint script configured in this repo.
+
+## Testing
+
+Unit tests run on **Vitest**, configured in `vitest.config.ts` via Astro's `getViteConfig` (so tests share the app's Vite pipeline — CSS Modules, JSX, path resolution). Tests are **co-located** with their source file as `Component.test.jsx` / `Component.test.ts`.
+
+- **React components** (`.jsx`) → `@testing-library/react` + `@testing-library/user-event`, run under the `jsdom` environment (the config default). `@testing-library/jest-dom` matchers are loaded globally via `vitest.setup.ts`.
+- **Astro components** (`.astro`) → the Astro Container API, imported as `import { experimental_AstroContainer as AstroContainer } from "astro/container";` (still under the `experimental_` prefix as of Astro 6.4 despite being the stable/documented API), then `container.renderToString(Component, { props, slots })` returns an HTML string to assert against directly.
+  - **Astro container tests must force the `node` environment** — put `// @vitest-environment node` as the very first line of the file. The container invokes esbuild internally, which is incompatible with jsdom's `TextEncoder` polyfill and throws an "Invariant violation" if run under `jsdom`. React tests should NOT have this comment (they need `jsdom` to mount into a DOM).
+
+**What's worth a unit test vs. not** (apply this when adding new components):
+- Test components with actual branching logic: prop-driven conditionals (`SectionTitle`'s conditional `margin-bottom` style), variant-driven class/data selection (`NavLink`, `SocialLink`, `SocialLinks`), array mapping (`NavList` over `navItems`), or non-trivial state/handlers (`ContactForm`'s Formik + emailjs flow, mocked via `vi.mock("@emailjs/browser", ...)`).
+- Skip components that are pure prop-interpolation with no branching (`Logo`, `ProjectCard`), nearly-identical trivial wrappers repeated many times (the 23 icon atoms under `atoms/icons/` — one ternary each, not worth 23 test files), and pure-composition organisms that only assemble already-tested children with no logic of their own (`Header`, `Hero`, `ProjectsSection`, `TechnologiesSection`, `ContactSection`) — those are better verified by running the app (`pnpm dev`) than by unit tests that would just re-test their children.
 
 ## Architecture
 
