@@ -1,13 +1,11 @@
 ---
-import Particles from "astro-particles";
-import type { ISourceOptions } from "tsparticles-engine";
-import type { RecursivePartial } from "tsparticles-engine";
+import Particles from "@tsparticles/astro";
 import GitWhite from "./icons/GitWhite.astro";
 import LinKedinWhite from "./icons/LinKedinWhite.astro";
 import GmailWhite from "./icons/GmailWhite.astro";
 
 // Define your style object
-const canvasStyles: RecursivePartial<CSSStyleDeclaration> = {
+const canvasStyles = {
   position: "absolute",
   top: "0",
   width: "100%",
@@ -15,7 +13,7 @@ const canvasStyles: RecursivePartial<CSSStyleDeclaration> = {
   zIndex: "-1",
 };
 
-const options: ISourceOptions = {
+const options = {
   autoPlay: true,
   background: {
     color: {
